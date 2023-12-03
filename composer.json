@@ -1,0 +1,30 @@
+{
+    "name": "thedomeffm/monolog-discord-handler-bundle",
+    "description": "Monolog handler to push your messages to discord via webhook",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "ext-curl": "*",
+        "monolog/monolog": "^3.0",
+        "symfony/config": "^5.4|^6.0|^7.0",
+        "symfony/dependency-injection": "^5.4|^6.0|^7.0",
+        "symfony/http-kernel": "^5.4|^6.0|^7.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    },
+    "autoload": {
+        "psr-4": {
+            "TheDomeFfm\\MonologDiscordHandlerBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TheDomeFfm\\MonologDiscordHandlerBundle\\Tests\\": "tests/"
+        }
+    }
+}
