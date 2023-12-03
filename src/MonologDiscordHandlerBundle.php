@@ -11,6 +11,8 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class MonologDiscordHandlerBundle extends AbstractBundle
 {
+    protected string $extensionAlias = 'thedomeffm_monolog_discord_handler';
+
     public function configure(DefinitionConfigurator $definition): void
     {
         $definition->rootNode()
@@ -29,7 +31,7 @@ class MonologDiscordHandlerBundle extends AbstractBundle
         $container->import('Resources/config/services.xml');
 
         if (empty($config)) {
-            throw new \RuntimeException('Please add a configuration for \'monolog_discord_handler\'.');
+            return;
         }
 
         $container->services()

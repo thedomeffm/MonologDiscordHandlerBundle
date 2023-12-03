@@ -11,9 +11,9 @@ _not published yet_
 I've not added a recipe (or what ever I need to create :shrug:), so you need to create the config by yourself.
 
 ```yaml
-# monolog_discord_handler.yaml
+# thedomeffm_monolog_discord_handler.yaml
 
-monolog_discord_handler:
+thedomeffm_monolog_discord_handler:
     discord:
         webhook_url: "%env(DISCORD_WEBHOOK_URL)%"
 ```
