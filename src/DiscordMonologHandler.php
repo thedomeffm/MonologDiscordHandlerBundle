@@ -14,7 +14,7 @@ use Monolog\LogRecord;
 class DiscordMonologHandler extends AbstractProcessingHandler
 {
     public function __construct(
-        private readonly string $webhookUrl,
+        #[\SensitiveParameter] private readonly string $webhookUrl,
         protected Level $level = Level::Error,
         protected bool $bubble = true,
     ) {

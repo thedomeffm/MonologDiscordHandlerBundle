@@ -4,7 +4,7 @@ Adds a handler to monolog which can post your logs directly via discord webhook 
 
 ## Installation
 
-_not published yet_
+`composer require thedomeffm/monolog-discord-handler-bundle`
 
 ## Configuration
 
