@@ -23,7 +23,7 @@ class DiscordMonologHandler extends AbstractProcessingHandler
 
     protected function write(LogRecord $record): void
     {
-        if (empty($this->webhookUrl) || !str_starts_with($this->webhookUrl, 'https://')) {
+        if (!str_starts_with($this->webhookUrl, 'https://')) {
             return;
         }
 
