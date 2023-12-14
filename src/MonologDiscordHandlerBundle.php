@@ -35,7 +35,7 @@ class MonologDiscordHandlerBundle extends AbstractBundle
         }
 
         $container->services()
-            ->get('thedomeffm_discord_monolog_handler')
+            ->get('thedomeffm_monolog_discord_handler')
             ->arg(0, $config['discord']['webhook_url'])
         ;
     }

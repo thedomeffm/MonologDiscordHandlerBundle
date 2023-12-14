@@ -11,7 +11,7 @@ use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
 
-class DiscordMonologHandler extends AbstractProcessingHandler
+class MonologDiscordHandler extends AbstractProcessingHandler
 {
     public function __construct(
         #[\SensitiveParameter] private readonly string $webhookUrl,

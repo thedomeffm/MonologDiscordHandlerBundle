@@ -5,8 +5,12 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="thedomeffm_discord_monolog_handler" class="TheDomeFfm\MonologDiscordHandlerBundle\DiscordMonologHandler" public="true">
+        <service id="thedomeffm_monolog_discord_handler" class="TheDomeFfm\MonologDiscordHandlerBundle\MonologDiscordHandler" public="true">
             <argument />
+        </service>
+
+        <service id="thedomeffm_discord_monolog_handler" alias="thedomeffm_monolog_discord_handler">
+            <deprecated package="thedomeffm/monolog-discord-handler-bundle" version="v0.0.5" />
         </service>
     </services>
 </container>

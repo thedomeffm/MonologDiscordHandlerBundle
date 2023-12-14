@@ -32,7 +32,7 @@ monolog:
         # your other handler...
         discord:
             type: service
-            id: thedomeffm_discord_monolog_handler
+            id: thedomeffm_monolog_discord_handler
 ```
 
 Here is an example how a production config could look like:
@@ -62,7 +62,7 @@ when@prod:
 
             discord:
                 type: service
-                id: thedomeffm_discord_monolog_handler
+                id: thedomeffm_monolog_discord_handler
 
             # your other handler...
 ```
