@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace TheDomeFfm\MonologDiscordHandlerBundle;
 
-use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\JsonFormatter;
 
-class DiscordFormatter extends JsonFormatter implements FormatterInterface
+class DiscordFormatter extends JsonFormatter
 {
 }

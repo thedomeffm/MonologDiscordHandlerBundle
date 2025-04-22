@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace TheDomeFfm\MonologDiscordHandlerBundle;
 
-use TheDomeFfm\MonologDiscordHandlerBundle\Message\DiscordTextMessage;
-use TheDomeFfm\MonologDiscordHandlerBundle\Message\MdHeadline;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
+use TheDomeFfm\MonologDiscordHandlerBundle\Message\DiscordMessageFactoryInterface;
 
 class MonologDiscordHandler extends AbstractProcessingHandler
 {
     public function __construct(
         #[\SensitiveParameter] private readonly string $webhookUrl,
+        private readonly DiscordMessageFactoryInterface $discordMessageFactory,
         protected Level $level = Level::Error,
         protected bool $bubble = true,
     ) {
@@ -27,15 +27,7 @@ class MonologDiscordHandler extends AbstractProcessingHandler
             return;
         }
 
-        $discordMessage = new DiscordTextMessage();
-
-        $discordMessage
-            ->addHeadline(
-                MdHeadline::H1,
-                sprintf('[%s] %s', $record->level->name, $record->message),
-            )
-            ->addText(sprintf('Server DateTime: %s', $record->datetime->format('Y-m-d H:i:s')))
-            ->addMultilineCodeBlock($record['formatted'], 'json');
+        $discordMessage = $this->discordMessageFactory->createFromLogRecord($record);
 
         $body = json_encode(['content' => stripcslashes($discordMessage->getContent())], JSON_THROW_ON_ERROR, JSON_UNESCAPED_SLASHES);
 
