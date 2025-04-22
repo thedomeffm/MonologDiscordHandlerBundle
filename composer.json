@@ -1,6 +1,8 @@
 {
     "name": "thedomeffm/monolog-discord-handler-bundle",
     "description": "Monolog handler to push your logs to discord via webhook",
+    "keywords": ["monolog", "discord", "logging"],
+    "homepage": "https://github.com/thedomeffm/MonologDiscordHandlerBundle",
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {

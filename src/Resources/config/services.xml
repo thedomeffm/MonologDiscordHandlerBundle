@@ -12,5 +12,9 @@
         <service id="thedomeffm_discord_monolog_handler" alias="thedomeffm_monolog_discord_handler">
             <deprecated package="thedomeffm/monolog-discord-handler-bundle" version="v0.0.5" />
         </service>
+
+        <service id="thedomeffm_monolog_discord_message_factory" class="TheDomeFfm\MonologDiscordHandlerBundle\Message\DiscordMessageFactory" public="true">
+            <argument />
+        </service>
     </services>
 </container>
